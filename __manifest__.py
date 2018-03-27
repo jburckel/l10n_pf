@@ -3,7 +3,7 @@
 
 {
     'name': 'French Polynesia - Accounting',
-    'version': '1.2',
+    'version': '0.1',
     'category': 'Localization',
     'description': """
 This is the module to manage the accounting chart for French Polynesia in Odoo.
