@@ -3,33 +3,33 @@
 
     <!-- Account Tags -->
 
-        <record id="tax_16_0" model="account.account.tag">
-            <field name="name">16.0</field>
+        <record id="tax_16" model="account.account.tag">
+            <field name="name">16%</field>
             <field name="applicability">taxes</field>
         </record>
 
-        <record id="tax_13_0" model="account.account.tag">
-            <field name="name">13.0</field>
+        <record id="tax_13" model="account.account.tag">
+            <field name="name">13%</field>
             <field name="applicability">taxes</field>
         </record>
 
-        <record id="tax_5_0" model="account.account.tag">
-            <field name="name">5.0</field>
+        <record id="tax_5" model="account.account.tag">
+            <field name="name">5%</field>
             <field name="applicability">taxes</field>
         </record>
 
-        <record id="tax_ACH-16_0" model="account.account.tag">
-            <field name="name">ACH-16.0</field>
+        <record id="tax_ACH-16" model="account.account.tag">
+            <field name="name">ACH-16%</field>
             <field name="applicability">taxes</field>
         </record>
 
-        <record id="tax_ACH-13_0" model="account.account.tag">
-            <field name="name">ACH-13_0</field>
+        <record id="tax_ACH-13" model="account.account.tag">
+            <field name="name">ACH-13%</field>
             <field name="applicability">taxes</field>
         </record>
 
-        <record id="tax_ACH-5_0" model="account.account.tag">
-            <field name="name">ACH-5.0</field>
+        <record id="tax_ACH-5" model="account.account.tag">
+            <field name="name">ACH-5%</field>
             <field name="applicability">taxes</field>
         </record>
 
@@ -47,8 +47,8 @@
     <record model="account.tax.template" id="tva_normale">
       <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
       <field name="name">TVA collectée (vente) 16,0%</field>
-      <field name="description">16.0</field>
-      <field name="amount" eval="16.0"/>
+      <field name="description">16%</field>
+      <field name="amount" eval="16"/>
       <field name="amount_type">percent</field>
       <field name="refund_account_id" ref="pcg_d_445711"/>
       <field name="account_id" ref="pcg_d_445711"/>
@@ -57,54 +57,54 @@
       "Set Your Accounting Options" (wizard.multi.charts.accounts) -->
       <field name="sequence" eval="9"/>
       <field name="type_tax_use">sale</field>
-      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_16_0')])]"/>
+      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_16')])]"/>
     </record>
 
     <record model="account.tax.template" id="tva_intermediaire">
       <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
       <field name="name">TVA collectée (vente) 13%</field>
-      <field name="description">13</field>
+      <field name="description">13%</field>
       <field name="amount" eval="13"/>
       <field name="amount_type">percent</field>
       <field name="refund_account_id" ref="pcg_d_445712"/>
       <field name="account_id" ref="pcg_d_445712"/>
       <field name="sequence" eval="10"/>
       <field name="type_tax_use">sale</field>
-      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_13_0')])]"/>
+      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_13')])]"/>
     </record>
 
     <record model="account.tax.template" id="tva_reduite">
       <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
       <field name="name">TVA collectée (vente) 5,0%</field>
-      <field name="description">5.0</field>
+      <field name="description">5%</field>
       <field name="amount" eval="5.0"/>
       <field name="amount_type">percent</field>
       <field name="refund_account_id" ref="pcg_d_445713"/>
       <field name="account_id" ref="pcg_d_445713"/>
       <field name="sequence" eval="10"/>
       <field name="type_tax_use">sale</field>
-      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_5_0')])]"/>
+      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_5')])]"/>
     </record>
 
 <!-- VENTES Tax INCLUDE (TTC) -->
     <record model="account.tax.template" id="tva_normale_ttc">
       <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
       <field name="name">TVA collectée (vente) 16,0% TTC</field>
-      <field name="description">16.0-TTC</field>
+      <field name="description">16%</field>
       <field name="price_include" eval="1"/>
-      <field name="amount" eval="16.0"/>
+      <field name="amount" eval="16"/>
       <field name="amount_type">percent</field>
       <field name="refund_account_id" ref="pcg_d_445711"/>
       <field name="account_id" ref="pcg_d_445711"/>
       <field name="sequence" eval="10"/>
       <field name="type_tax_use">sale</field>
-      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_16_0')])]"/>
+      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_16')])]"/>
     </record>
 
     <record model="account.tax.template" id="tva_intermediaire_ttc">
       <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
       <field name="name">TVA collectée (vente) 13% TTC</field>
-      <field name="description">13-TTC</field>
+      <field name="description">13%</field>
       <field name="price_include" eval="1"/>
       <field name="amount" eval="13"/>
       <field name="amount_type">percent</field>
@@ -112,29 +112,29 @@
       <field name="account_id" ref="pcg_d_445712"/>
       <field name="sequence" eval="10"/>
       <field name="type_tax_use">sale</field>
-      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_13_0')])]"/>
+      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_13')])]"/>
     </record>
 
     <record model="account.tax.template" id="tva_reduite_ttc">
       <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
       <field name="name">TVA collectée (vente) 5,0% TTC</field>
-      <field name="description">5-TTC</field>
+      <field name="description">5%</field>
       <field name="price_include" eval="1"/>
-      <field name="amount" eval="10.0"/>
+      <field name="amount" eval="5"/>
       <field name="amount_type">percent</field>
       <field name="refund_account_id" ref="pcg_d_445713"/>
       <field name="account_id" ref="pcg_d_445713"/>
       <field name="sequence" eval="10"/>
       <field name="type_tax_use">sale</field>
-      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_5_0')])]"/>
+      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_5')])]"/>
     </record>
 
 <!-- ACHATS Tax excluded from price -->
     <record model="account.tax.template" id="tva_acq_normale">
       <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
       <field name="name">TVA déductible (achat) 16,0%</field>
-      <field name="description">ACH-16.0</field>
-      <field name="amount" eval="16.0"/>
+      <field name="description">ACH-16%</field>
+      <field name="amount" eval="16"/>
       <field name="amount_type">percent</field>
       <field name="refund_account_id" ref="pcg_d_44566"/>
       <field name="account_id" ref="pcg_d_44566"/>
@@ -143,54 +143,54 @@
       "Set Your Accounting Options" (wizard.multi.charts.accounts) -->
       <field name="sequence" eval="9"/>
       <field name="type_tax_use">purchase</field>
-      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_ACH-16_0')])]"/>
+      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_ACH-16')])]"/>
     </record>
 
     <record model="account.tax.template" id="tva_acq_intermediaire">
       <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
       <field name="name">TVA déductible (achat) 13%</field>
-      <field name="description">ACH-13</field>
+      <field name="description">ACH-13%</field>
       <field name="amount" eval="13"/>
       <field name="amount_type">percent</field>
       <field name="refund_account_id" ref="pcg_d_44566"/>
       <field name="account_id" ref="pcg_d_44566"/> 
       <field name="sequence" eval="10"/>
       <field name="type_tax_use">purchase</field>
-      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_ACH-13_0')])]"/>
+      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_ACH-13')])]"/>
     </record>
 
     <record model="account.tax.template" id="tva_acq_reduite">
       <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
       <field name="name">TVA déductible (achat) 5,0%</field>
-      <field name="description">ACH-5.0</field>
-      <field name="amount" eval="5.0"/>
+      <field name="description">ACH-5</field>
+      <field name="amount" eval="5"/>
       <field name="amount_type">percent</field>
       <field name="refund_account_id" ref="pcg_d_44566"/>
       <field name="account_id" ref="pcg_d_44566"/>
       <field name="sequence" eval="10"/>
       <field name="type_tax_use">purchase</field>
-      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_ACH-5_0')])]"/>
+      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_ACH-5')])]"/>
     </record>
 
 <!-- ACHATS Tax included in price -->
     <record model="account.tax.template" id="tva_acq_normale_TTC">
       <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
       <field name="name">TVA déductible (achat) 16,0% TTC</field>
-      <field name="description">ACH-16.0-TTC</field>
+      <field name="description">ACH-16%</field>
       <field name="price_include" eval="1"/>
-      <field name="amount" eval="16.0"/>
+      <field name="amount" eval="16"/>
       <field name="amount_type">percent</field>
       <field name="refund_account_id" ref="pcg_d_44566"/>
       <field name="account_id" ref="pcg_d_44566"/>
       <field name="sequence" eval="10"/>
       <field name="type_tax_use">purchase</field>
-      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_ACH-16_0')])]"/>
+      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_ACH-16')])]"/>
     </record>
 
     <record model="account.tax.template" id="tva_acq_specifique_TTC">
       <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
       <field name="name">TVA déductible (achat) 13% TTC</field>
-      <field name="description">ACH-13-TTC</field>
+      <field name="description">ACH-13%</field>
       <field name="price_include" eval="1"/>
       <field name="amount" eval="13"/>
       <field name="amount_type">percent</field>
@@ -198,13 +198,13 @@
       <field name="account_id" ref="pcg_d_44566"/> 
       <field name="sequence" eval="10"/>
       <field name="type_tax_use">purchase</field>
-      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_ACH-13_0')])]"/>
+      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_ACH-13')])]"/>
     </record>
 
     <record model="account.tax.template" id="tva_acq_reduite_TTC">
       <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
       <field name="name">TVA déductible (achat) 5% TTC</field>
-      <field name="description">ACH-5.0-TTC</field>
+      <field name="description">ACH-5%</field>
       <field name="price_include" eval="1"/>
       <field name="amount" eval="5.0"/>
       <field name="amount_type">percent</field>
@@ -212,7 +212,7 @@
       <field name="account_id" ref="pcg_d_44566"/>
       <field name="sequence" eval="10"/>
       <field name="type_tax_use">purchase</field>
-      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_ACH-5_0')])]"/>
+      <field name="tag_ids" eval="[(6,0,[ref('l10n_pf.tax_ACH-5')])]"/>
     </record>
 
 <!-- AUTRE -->
