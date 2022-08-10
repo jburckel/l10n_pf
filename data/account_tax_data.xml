@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- VENTES Tax excluded from price -->
+    <record model="account.tax.template" id="tva_normale">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">TVA collectée (vente) 16,0%</field>
+        <field name="description">16%</field>
+        <field name="amount" eval="16"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="9"/>
+        <field name="type_tax_use">sale</field>
+        <field name="tax_group_id" ref="tax_group_tva_16"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445711')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445711')
+            }),
+        ]"/>
+    </record>
+
+    <record model="account.tax.template" id="tva_intermediaire">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">TVA collectée (vente) 13%</field>
+        <field name="description">13%</field>
+        <field name="amount" eval="13"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">sale</field>
+        <field name="tax_scope">service</field>
+        <field name="tax_exigibility">on_payment</field>
+        <field name="cash_basis_transition_account_id" ref="pcg_d_44574"/>
+        <field name="tax_group_id" ref="tax_group_tva_13"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445712')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445712')
+            }),
+        ]"/>
+    </record>
+
+    <record model="account.tax.template" id="tva_reduite">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">TVA collectée (vente) 5,0%</field>
+        <field name="description">5%</field>
+        <field name="amount" eval="5.0"/>
+        <field name="amount_type">percent</field>
+        <field name="type_tax_use">sale</field>
+        <field name="tax_group_id" ref="tax_group_tva_5"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445713')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445713')
+            }),
+        ]"/>
+    </record>
+
+    <!-- VENTES Tax INCLUDE (TTC) -->
+    <record model="account.tax.template" id="tva_normale_ttc">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">TVA collectée (vente) 16,0% TTC</field>
+        <field name="description">16%</field>
+        <field name="price_include" eval="1"/>
+        <field name="amount" eval="16"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">sale</field>
+        <field name="tax_group_id" ref="tax_group_tva_16"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445711')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445711')
+            }),
+        ]"/>
+    </record>
+
+    <record model="account.tax.template" id="tva_intermediaire_ttc">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">TVA collectée (vente) 13% TTC</field>
+        <field name="description">13%</field>
+        <field name="price_include" eval="1"/>
+        <field name="amount" eval="13"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">sale</field>
+        <field name="tax_scope">service</field>
+        <field name="tax_exigibility">on_payment</field>
+        <field name="cash_basis_transition_account_id" ref="pcg_d_44574"/>
+        <field name="tax_group_id" ref="tax_group_tva_13"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445712')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445712')
+            }),
+        ]"/>
+    </record>
+
+    <record model="account.tax.template" id="tva_reduite_ttc">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">TVA collectée (vente) 5,0% TTC</field>
+        <field name="description">5%</field>
+        <field name="price_include" eval="1"/>
+        <field name="amount" eval="5"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">sale</field>
+        <field name="tax_group_id" ref="tax_group_tva_5"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445713')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445713')
+            }),
+        ]"/>
+    </record>
+
+    <!-- ACHATS Tax excluded from price -->
+    <record model="account.tax.template" id="tva_acq_normale">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">TVA déductible (achat) 16,0%</field>
+        <field name="description">ACH-16%</field>
+        <field name="amount" eval="16"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="9"/>
+        <field name="type_tax_use">purchase</field>
+        <field name="tax_group_id" ref="tax_group_tva_16"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_44566')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_44566')
+            }),
+        ]"/>
+    </record>
+
+    <record model="account.tax.template" id="tva_acq_intermediaire">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">TVA déductible (achat) 13%</field>
+        <field name="description">ACH-13%</field>
+        <field name="amount" eval="13"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">purchase</field>
+        <field name="tax_scope">service</field>
+        <field name="tax_exigibility">on_payment</field>
+        <field name="cash_basis_transition_account_id" ref="pcg_d_44564"/>
+        <field name="tax_group_id" ref="tax_group_tva_13"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_44566')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_44566')
+            }),
+        ]"/>
+    </record>
+
+    <record model="account.tax.template" id="tva_acq_reduite">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">TVA déductible (achat) 5,0%</field>
+        <field name="description">ACH-5</field>
+        <field name="amount" eval="5"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">purchase</field>
+        <field name="tax_group_id" ref="tax_group_tva_5"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_44566')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_44566')
+            }),
+        ]"/>
+    </record>
+
+    <!-- ACHATS Tax included in price -->
+    <record model="account.tax.template" id="tva_acq_normale_TTC">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">TVA déductible (achat) 16,0% TTC</field>
+        <field name="description">ACH-16%</field>
+        <field name="price_include" eval="1"/>
+        <field name="amount" eval="16"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">purchase</field>
+        <field name="tax_group_id" ref="tax_group_tva_16"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_44566')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_44566')
+            }),
+        ]"/>
+    </record>
+
+    <record model="account.tax.template" id="tva_acq_intermediaire_TTC">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">TVA déductible (achat) 13% TTC</field>
+        <field name="description">ACH-13%</field>
+        <field name="price_include" eval="1"/>
+        <field name="amount" eval="13"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">purchase</field>
+        <field name="tax_scope">service</field>
+        <field name="tax_exigibility">on_payment</field>
+        <field name="cash_basis_transition_account_id" ref="pcg_d_44564"/>
+        <field name="tax_group_id" ref="tax_group_tva_16"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_44566')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_44566')
+            }),
+        ]"/>
+    </record>
+
+    <record model="account.tax.template" id="tva_acq_reduite_TTC">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">TVA déductible (achat) 5% TTC</field>
+        <field name="description">ACH-5%</field>
+        <field name="price_include" eval="1"/>
+        <field name="amount" eval="5.0"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">purchase</field>
+        <field name="tax_group_id" ref="tax_group_tva_5"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_44566')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_44566')
+            }),
+        ]"/>
+    </record>
+
+    <!-- CPS Vente - Déclaration Facture -->
+    <record model="account.tax.template" id="cps_vente_TTC">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">CPS (vente) 1% TTC</field>
+        <field name="description">CPS 1%</field>
+        <field name="price_include" eval="1"/>
+        <field name="amount" eval="1.0"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">sale</field>
+        <field name="tax_group_id" ref="tax_group_cps_1"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445781')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445781')
+            }),
+        ]"/>
+    </record>
+
+    <record model="account.tax.template" id="cps_vente">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">CPS (vente) 1%</field>
+        <field name="description">CPS 1%</field>
+        <field name="price_include" eval="0"/>
+        <field name="amount" eval="1.0"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">sale</field>
+        <field name="tax_group_id" ref="tax_group_cps_1"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445781')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445781')
+            }),
+        ]"/>
+    </record>
+
+    <!-- CPS Vente - Déclaration au Paiement -->
+    <record model="account.tax.template" id="cps_vente_service_TTC">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">CPS (vente) 1% TTC - Service</field>
+        <field name="description">CPS 1% TTC Service - Déclaration au paiement de la facture</field>
+        <field name="price_include" eval="1"/>
+        <field name="amount" eval="1.0"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">sale</field>
+        <field name="tax_scope">service</field>
+        <field name="tax_exigibility">on_payment</field>
+        <field name="cash_basis_transition_account_id" ref="pcg_d_44574"/>
+        <field name="tax_group_id" ref="tax_group_cps_1"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445781')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445781')
+            }),
+        ]"/>
+    </record>
+
+    <record model="account.tax.template" id="cps_vente_service">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">CPS (vente) 1% - Service</field>
+        <field name="description">CPS 1% Service - Déclaration au paiement de la facture</field>
+        <field name="price_include" eval="0"/>
+        <field name="amount" eval="1.0"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">sale</field>
+        <field name="tax_scope">service</field>
+        <field name="tax_exigibility">on_payment</field>
+        <field name="cash_basis_transition_account_id" ref="pcg_d_44574"/>
+        <field name="tax_group_id" ref="tax_group_cps_1"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445781')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_445781')
+            }),
+        ]"/>
+    </record>
+
+    <record model="account.tax.template" id="cps_achat_TTC">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">CPS (achat) 1% TTC</field>
+        <field name="description">CPS-ACH-1%</field>
+        <field name="price_include" eval="1"/>
+        <field name="amount" eval="1.0"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">purchase</field>
+        <field name="tax_group_id" ref="tax_group_cps_1"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_63712')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_63712')
+            }),
+        ]"/>
+    </record>
+
+    <record model="account.tax.template" id="cps_achat">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">CPS (achat) 1%</field>
+        <field name="description">CPS-ACH-1%</field>
+        <field name="price_include" eval="0"/>
+        <field name="amount" eval="1.0"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">purchase</field>
+        <field name="tax_group_id" ref="tax_group_cps_1"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_63712')
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base'
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('pcg_d_63712')
+            }),
+        ]"/>
+    </record>
+
+    <record model="account.tax.template" id="cps_vente_export">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">CPS Export (vente) 0%</field>
+        <field name="description">CPS-0%</field>
+        <field name="price_include" eval="0"/>
+        <field name="amount" eval="0.0"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">sale</field>
+        <field name="tax_group_id" ref="tax_group_cps_0"/>
+    </record>
+
+    <record model="account.tax.template" id="cps_achat_export">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">CPS Export (achat) 0%</field>
+        <field name="description">CPS-ACH-0%</field>
+        <field name="price_include" eval="0"/>
+        <field name="amount" eval="0.0"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">purchase</field>
+        <field name="tax_group_id" ref="tax_group_cps_0"/>
+    </record>
+
+    <!-- AUTRE -->
+    <record model="account.tax.template" id="tva_export_0">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">TVA 0% export (vente)</field>
+        <field name="description">EXPORT-0</field>
+        <field name="amount" eval="0.00"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">sale</field>
+        <field name="tax_group_id" ref="tax_group_tva_0"/>
+    </record>
+
+    <record model="account.tax.template" id="tva_import_0">
+        <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
+        <field name="name">TVA 0% import (achat)</field>
+        <field name="description">IMPORT-0</field>
+        <field name="amount" eval="0.00"/>
+        <field name="amount_type">percent</field>
+        <field name="sequence" eval="10"/>
+        <field name="type_tax_use">purchase</field>
+        <field name="tax_group_id" ref="tax_group_tva_0"/>
+    </record>
+
+    <!--
+        Comptes sur lesquels les taxes s'appliquent par défaut
+    -->
+
+    <!-- Charges -->
+    <record id="pcg_b_601" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6011" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6012" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6017" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_b_602" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_b_6021" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_60211" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_60212" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_b_6022" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_60221" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_60222" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_60223" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_60224" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_60225" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_60261" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_60265" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_60267" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_b_604" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_intermediaire'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_b_605" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_b_606" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6061" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_intermediaire'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6063" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6064" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6068" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_b_607" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6071" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6072" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_b_608" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_b_609" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6091" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6092" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6094" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6095" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6096" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6097" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6098" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_b_611" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_intermediaire'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6122" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_intermediaire'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6135" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_intermediaire'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6136" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6152" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_intermediaire'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6155" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_intermediaire'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6156" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_intermediaire'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6225" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_intermediaire'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6226" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_intermediaire'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6227" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_intermediaire'),ref('cps_achat')])]"/>
+    </record>
+
+    <record id="pcg_d_6228" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_intermediaire'),ref('cps_achat')])]"/>
+    </record>
+
+    <!-- Produits -->
+    <record id="pcg_b_701" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_normale'),ref('cps_vente')])]"/>
+    </record>
+
+    <record id="pcg_d_7011" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_normale'),ref('cps_vente')])]"/>
+    </record>
+
+    <record id="pcg_d_7012" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_normale'),ref('cps_vente')])]"/>
+    </record>
+
+    <record id="pcg_b_702" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_normale'),ref('cps_vente')])]"/>
+    </record>
+
+    <record id="pcg_b_703" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_normale'),ref('cps_vente')])]"/>
+    </record>
+
+    <record id="pcg_b_704" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_intermediaire'),ref('cps_vente_service')])]"/>
+    </record>
+
+    <record id="pcg_d_7041" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_intermediaire'),ref('cps_vente_service')])]"/>
+    </record>
+
+    <record id="pcg_d_7042" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_intermediaire'),ref('cps_vente_service')])]"/>
+    </record>
+
+    <record id="pcg_b_705" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_intermediaire'),ref('cps_vente_service')])]"/>
+    </record>
+
+    <record id="pcg_b_706" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_intermediaire'),ref('cps_vente_service')])]"/>
+    </record>
+
+    <record id="pcg_d_7071" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_normale'),ref('cps_vente')])]"/>
+    </record>
+
+    <record id="pcg_d_7072" model="account.account.template">
+        <field name="tax_ids" eval="[(6,0,[ref('tva_normale'),ref('cps_vente')])]"/>
+    </record>
+
+
+</odoo>

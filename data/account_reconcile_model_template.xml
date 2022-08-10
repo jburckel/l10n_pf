@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="bank_charges_reconcile_model" model="account.reconcile.model.template">
+        <field name="name">Frais bancaires</field>
+        <field name="amount_type">percentage</field>
+        <field name="amount">100</field>
+    </record>
+</odoo>
