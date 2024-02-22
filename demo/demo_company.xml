@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="partner_demo_company_pf" model="res.partner">
+        <field name="name">PF Company</field>
+        <field name="street">Avenue du Prince Hinoi</field>
+        <field name="city">Papeete</field>
+        <field name="country_id" ref="base.pf"/>
+        <field name="tahiti">E000000</field>
+        
+        <field name="zip">98714</field>
+        <field name="phone">+689 87 23 23 35</field>
+        <field name="email">info@company.pfexample.com</field>
+        <field name="website">www.pfexample.com</field>
+    </record>
+
+    <record id="demo_company_pf" model="res.company">
+        <field name="name">PF Company</field>
+        <field name="partner_id" ref="partner_demo_company_pf"/>
+    </record>
+
+    <record id="demo_bank_pf" model="res.partner.bank">
+        <field name="acc_number">FR5730003000507963949549B56</field>
+        <field name="partner_id" ref="partner_demo_company_pf"/>
+        <field name="company_id" ref="demo_company_pf"/>
+    </record>
+
+    <function model="res.company" name="_onchange_country_id">
+        <value eval="[ref('demo_company_pf')]"/>
+    </function>
+
+    <function model="res.users" name="write">
+        <value eval="[ref('base.user_root'), ref('base.user_admin'), ref('base.user_demo')]"/>
+        <value eval="{'company_ids': [(4, ref('l10n_pf.demo_company_pf'))]}"/>
+    </function>
+
+    <function model="account.chart.template" name="try_loading">
+        <value eval="[]"/>
+        <value>fr</value>
+        <value model="res.company" eval="obj().env.ref('l10n_pf.demo_company_pf')"/>
+    </function>
+</odoo>
