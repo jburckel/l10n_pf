@@ -24,7 +24,6 @@ This module applies to companies based in French Polynesia mainland.
         'data/account_tax_data.xml',
         'views/l10n_pf_view.xml',
         'data/account_reconcile_model_template.xml',
-        'data/l10n_pf_chart_data.xml',
     ],
     'demo': [
         'demo/demo_company.xml',
