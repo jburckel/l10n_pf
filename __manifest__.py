@@ -12,7 +12,7 @@ This is the module to manage the accounting chart for French Polynesia in Odoo.
 
 This module applies to companies based in French Polynesia mainland. 
 
-**Credits:** Sistheo, Zeekom, CrysaLEAD, Akretion and Camptocamp.
+**Credits:** Sistheo, Zeekom, CrysaLEAD, Akretion, Camptocamp and Natimai Solutions.
 """,
     'depends': [
         'base_iban',

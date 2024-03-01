@@ -285,7 +285,7 @@ pcg_3955,Provisions for depreciation of finished products (same allocation as fo
 pcg_3971,Provisions for depreciation of goods for resale (or group) A,397100,asset_current,,False,Provisions pour dépréciation des stocks de marchandises (ou groupe) A
 pcg_3972,Provisions for depreciation of goods for resale (or group) B,397200,asset_current,,False,Provisions pour dépréciation des stocks de marchandises (ou groupe) B
 pcg_400,Suppliers and related accounts,400000,liability_payable,,True,Fournisseurs et comptes rattachés
-fr_pcg_pay,Suppliers - Purchase of goods and services,401100,liability_payable,,True,Fournisseurs - Achats de biens et prestations de services
+pf_pcg_pay,Suppliers - Purchase of goods and services,401100,liability_payable,,True,Fournisseurs - Achats de biens et prestations de services
 pcg_4017,Suppliers - Contract performance holdbacks,401700,liability_payable,,True,Fournisseurs - Retenues de garantie
 pcg_403,Suppliers - Bills payable,403000,liability_payable,,True,Fournisseurs - Effets à payer
 pcg_4041,Suppliers - Fixed asset purchases,404100,liability_payable,,True,Fournisseurs - Achats d'immobilisations
@@ -300,8 +300,8 @@ pcg_40971,Suppliers in debit - Other debits,409710,asset_current,,True,Fournisse
 pcg_40974,Suppliers in debit - Other debits of fixed asset suppliers,409740,asset_current,,True,Fournisseurs débiteurs - Autres avoirs des fournisseurs d'immobilisations
 pcg_4098,"Suppliers in debit - Purchase rebates, discounts, allowances and other outstanding debits",409800,asset_current,,True,"Fournisseurs débiteurs - Rabais, remises, ristournes à obtenir et autres avoirs non encore reçus"
 pcg_410,Customers and related accounts,410000,asset_receivable,,True,Clients et comptes rattachés
-fr_pcg_recv,Customers - Sales of goods or services,411100,asset_receivable,,True,Clients - Ventes de biens ou de prestations de services
-fr_pcg_recv_pos,Customers - Sales of goods or services (PoS),411101,asset_receivable,,True,Clients - Ventes de biens ou de prestations de services (PoS)
+pf_pcg_recv,Customers - Sales of goods or services,411100,asset_receivable,,True,Clients - Ventes de biens ou de prestations de services
+pf_pcg_recv_pos,Customers - Sales of goods or services (PoS),411101,asset_receivable,,True,Clients - Ventes de biens ou de prestations de services (PoS)
 pcg_4117,Customers - Contract performance holdbacks,411700,asset_receivable,,True,Clients - Retenues de garantie
 pcg_413,Customers - Bills receivable,413000,asset_receivable,,True,Clients - Effets à recevoir
 pcg_416,Doubtful or contested customer accounts,416000,asset_current,,True,Clients douteux ou litigieux
