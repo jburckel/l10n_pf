@@ -7,7 +7,7 @@ from odoo import fields, models, api, _
 class ResCompany(models.Model):
     _inherit = 'res.company'
 
-    l10n_fr_closing_sequence_id = fields.Many2one('ir.sequence', 'Sequence to use to build sale closings', readonly=True)
+    l10n_pf_closing_sequence_id = fields.Many2one('ir.sequence', 'Sequence to use to build sale closings', readonly=True)
 
     tahiti = fields.Char(string='TAHITI', size=6)
     cps = fields.Char(string='CPS', size=8)
@@ -31,7 +31,7 @@ class ResCompany(models.Model):
         for company in companies:
             #when creating a new french company, create the securisation sequence as well
             if company._is_accounting_unalterable():
-                sequence_fields = ['l10n_fr_closing_sequence_id']
+                sequence_fields = ['l10n_pf_closing_sequence_id']
                 company._create_secure_sequence(sequence_fields)
         return companies
 
@@ -40,7 +40,7 @@ class ResCompany(models.Model):
         #if country changed to fr, create the securisation sequence
         for company in self:
             if company._is_accounting_unalterable():
-                sequence_fields = ['l10n_fr_closing_sequence_id']
+                sequence_fields = ['l10n_pf_closing_sequence_id']
                 company._create_secure_sequence(sequence_fields)
         return res
 
@@ -55,7 +55,7 @@ class ResCompany(models.Model):
                 if not company[seq_field]:
                     vals = {
                         'name': _('Securisation of %s - %s', seq_field, company.name),
-                        'code': 'FRSECURE%s-%s' % (company.id, seq_field),
+                        'code': 'PFSECURE%s-%s' % (company.id, seq_field),
                         'implementation': 'no_gap',
                         'prefix': '',
                         'suffix': '',

@@ -15,8 +15,8 @@ pcg_1051,Special revaluation reserve,105100,equity,,False,Réserve spéciale de 
 pcg_1052,Voluntary revaluation difference,105200,equity,,False,Écart de réévaluation libre
 pcg_1053,Revaluation reserve,105300,equity,,False,Réserve de réévaluation
 pcg_1055,Revaluation differences (other legal transactions),105500,equity,,False,Écarts de réévaluation (autres opérations légales)
-pcg_1057,Other revaluation differences in France,105700,equity,,False,Autres écarts de réévaluation en France
-pcg_1058,Other revaluation differences outside France,105800,equity,,False,Autres écarts de réévaluation à l'étranger
+pcg_1057,Other revaluation differences in French Polynesia,105700,equity,,False,Autres écarts de réévaluation en Polynésie française
+pcg_1058,Other revaluation differences outside French Polynesia,105800,equity,,False,Autres écarts de réévaluation à l'étranger
 pcg_1061,Legal reserve,106100,equity,,False,Réserve légale
 pcg_10611,Basic legal reserve,106110,equity,,False,Réserve légale proprement dite
 pcg_10612,Net long-term capital gains,106120,equity,,False,Plus-values nettes à long terme

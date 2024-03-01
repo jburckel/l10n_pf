@@ -3,7 +3,7 @@
     <record id="tax_report" model="account.report">
         <field name="name">Tax Report</field>
         <field name="root_report_id" ref="account.generic_tax_report"/>
-        <field name="country_id" ref="base.fr"/>
+        <field name="country_id" ref="base.pf"/>
         <field name="filter_fiscal_position" eval="True"/>
         <field name="availability_condition">country</field>
         <field name="column_ids">
@@ -65,7 +65,7 @@
                                 </field>
                             </record>
                             <record id="tax_report_A5" model="account.report.line">
-                                <field name="name">A5 - Removal from suspensive tax regime (other than petroleum products)</field>
+                                <field name="name">A5 - Removal pfom suspensive tax regime (other than petroleum products)</field>
                                 <field name="code">box_A5</field>
                                 <field name="expression_ids">
                                     <record id="tax_report_A5_tag" model="account.report.expression">
@@ -98,7 +98,7 @@
                                 </field>
                             </record>
                             <record id="tax_report_B3" model="account.report.line">
-                                <field name="name">B3 - Taxable supplies of electricity, natural gas, heat or cooling in France</field>
+                                <field name="name">B3 - Taxable supplies of electricity, natural gas, heat or cooling in pfance</field>
                                 <field name="code">box_B3</field>
                                 <field name="expression_ids">
                                     <record id="tax_report_B3_tag" model="account.report.expression">
@@ -109,7 +109,7 @@
                                 </field>
                             </record>
                             <record id="tax_report_B4" model="account.report.line">
-                                <field name="name">B4 - Purchases of goods or services from a taxable person not established in France</field>
+                                <field name="name">B4 - Purchases of goods or services pfom a taxable person not established in pfance</field>
                                 <field name="code">box_B4</field>
                                 <field name="expression_ids">
                                     <record id="tax_report_B4_tag" model="account.report.expression">
@@ -180,7 +180,7 @@
                                 </field>
                             </record>
                             <record id="tax_report_E5" model="account.report.line">
-                                <field name="name">E5 - Removal from suspensive tax regime (other than petroleum products)</field>
+                                <field name="name">E5 - Removal pfom suspensive tax regime (other than petroleum products)</field>
                                 <field name="code">box_E5</field>
                                 <field name="expression_ids">
                                     <record id="tax_report_E5_tag" model="account.report.expression">
@@ -224,7 +224,7 @@
                                 </field>
                             </record>
                             <record id="tax_report_F3" model="account.report.line">
-                                <field name="name">F3 - Non-taxable supplies of electricity, natural gas, heat or cooling in France</field>
+                                <field name="name">F3 - Non-taxable supplies of electricity, natural gas, heat or cooling in pfance</field>
                                 <field name="code">box_F3</field>
                                 <field name="expression_ids">
                                     <record id="tax_report_F3_tag" model="account.report.expression">
@@ -257,7 +257,7 @@
                                 </field>
                             </record>
                             <record id="tax_report_F6" model="account.report.line">
-                                <field name="name">F6 - Franchise purchases</field>
+                                <field name="name">F6 - pfanchise purchases</field>
                                 <field name="code">box_F6</field>
                                 <field name="expression_ids">
                                     <record id="tax_report_F6_tag" model="account.report.expression">
@@ -268,7 +268,7 @@
                                 </field>
                             </record>
                             <record id="tax_report_F7" model="account.report.line">
-                                <field name="name">F7 - Sales of goods or services by a taxable person not established in France</field>
+                                <field name="name">F7 - Sales of goods or services by a taxable person not established in pfance</field>
                                 <field name="code">box_F7</field>
                                 <field name="expression_ids">
                                     <record id="tax_report_F7_tag" model="account.report.expression">
@@ -312,7 +312,7 @@
                         <field name="name">Gross VAT</field>
                     </record>
                     <record id="tax_report_tva_brute_metropo" model="account.report.line">
-                        <field name="name">Operations carried out in mainland France</field>
+                        <field name="name">Operations carried out in mainland pfance</field>
                         <field name="children_ids">
                             <record id="tax_report_08_base" model="account.report.line">
                                 <field name="name">08 - Standard rate 20% (base)</field>
@@ -335,7 +335,7 @@
                                         <field name="formula">box_08_base.balance * 0.2</field>
                                     </record>
                                     <record id="tax_report_08_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">08_taxe</field>
                                     </record>
@@ -362,7 +362,7 @@
                                         <field name="formula">box_09_base.balance * 0.055</field>
                                     </record>
                                     <record id="tax_report_09_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">09_taxe</field>
                                     </record>
@@ -389,7 +389,7 @@
                                         <field name="formula">box_9B_base.balance * 0.1</field>
                                     </record>
                                     <record id="tax_report_9B_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">9B_taxe</field>
                                     </record>
@@ -421,7 +421,7 @@
                                         <field name="formula">box_10_base.balance * 0.085</field>
                                     </record>
                                     <record id="tax_report_10_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">10_taxe</field>
                                     </record>
@@ -448,7 +448,7 @@
                                         <field name="formula">box_11_base.balance * 0.021</field>
                                     </record>
                                     <record id="tax_report_11_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">11_taxe</field>
                                     </record>
@@ -457,10 +457,10 @@
                         </field>
                     </record>
                     <record id="tax_report_tva_brute_autre" model="account.report.line">
-                        <field name="name">Transactions taxable at another rate (metropolitan France or DOM)</field>
+                        <field name="name">Transactions taxable at another rate (metropolitan pfance or DOM)</field>
                         <field name="children_ids">
                             <record id="tax_report_T1_base" model="account.report.line">
-                                <field name="name">T1 - Transactions carried out in the French overseas departments and taxable at 1.75% (base)</field>
+                                <field name="name">T1 - Transactions carried out in the pfench overseas departments and taxable at 1.75% (base)</field>
                                 <field name="code">box_T1_base</field>
                                 <field name="expression_ids">
                                     <record id="tax_report_T1_base_tag" model="account.report.expression">
@@ -471,7 +471,7 @@
                                 </field>
                             </record>
                             <record id="tax_report_T1_taxe" model="account.report.line">
-                                <field name="name">T1 - Transactions carried out in the French overseas departments and taxable at 1.75% (tax)</field>
+                                <field name="name">T1 - Transactions carried out in the pfench overseas departments and taxable at 1.75% (tax)</field>
                                 <field name="code">box_T1_taxe</field>
                                 <field name="expression_ids">
                                     <record id="tax_report_T1_taxe_tag" model="account.report.expression">
@@ -480,14 +480,14 @@
                                         <field name="formula">box_T1_base.balance * 0.0175</field>
                                     </record>
                                     <record id="tax_report_T1_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">T1_taxe</field>
                                     </record>
                                 </field>
                             </record>
                             <record id="tax_report_T2_base" model="account.report.line">
-                                <field name="name">T2 - Transactions carried out in the French overseas departments and taxable at 1.05% (base)</field>
+                                <field name="name">T2 - Transactions carried out in the pfench overseas departments and taxable at 1.05% (base)</field>
                                 <field name="code">box_T2_base</field>
                                 <field name="expression_ids">
                                     <record id="tax_report_T2_base_tag" model="account.report.expression">
@@ -498,7 +498,7 @@
                                 </field>
                             </record>
                             <record id="tax_report_T2_taxe" model="account.report.line">
-                                <field name="name">T2 - Transactions carried out in the French overseas departments and taxable at 1,05% (tax)</field>
+                                <field name="name">T2 - Transactions carried out in the pfench overseas departments and taxable at 1,05% (tax)</field>
                                 <field name="code">box_T2_taxe</field>
                                 <field name="expression_ids">
                                     <record id="tax_report_T2_taxe_tag" model="account.report.expression">
@@ -507,7 +507,7 @@
                                         <field name="formula">box_T2_base.balance * 0.0105</field>
                                     </record>
                                     <record id="tax_report_T2_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">T2_taxe</field>
                                     </record>
@@ -534,7 +534,7 @@
                                         <field name="formula">box_T3_base.balance * 0.1</field>
                                     </record>
                                     <record id="tax_report_T3_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">T3_taxe</field>
                                     </record>
@@ -561,7 +561,7 @@
                                         <field name="formula">box_T4_base.balance * 0.021</field>
                                     </record>
                                     <record id="tax_report_T4_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">T4_taxe</field>
                                     </record>
@@ -588,14 +588,14 @@
                                         <field name="formula">box_T5_base.balance * 0.009</field>
                                     </record>
                                     <record id="tax_report_T5_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">T5_taxe</field>
                                     </record>
                                 </field>
                             </record>
                             <record id="tax_report_T6_base" model="account.report.line">
-                                <field name="name">T6 - Transactions carried out in mainland France at the rate of 2,1% (base)</field>
+                                <field name="name">T6 - Transactions carried out in mainland pfance at the rate of 2,1% (base)</field>
                                 <field name="code">box_T6_base</field>
                                 <field name="expression_ids">
                                     <record id="tax_report_T6_base_tag" model="account.report.expression">
@@ -606,7 +606,7 @@
                                 </field>
                             </record>
                             <record id="tax_report_T6_taxe" model="account.report.line">
-                                <field name="name">T6 - Transactions carried out in mainland France at the rate of 2,1% (tax)</field>
+                                <field name="name">T6 - Transactions carried out in mainland pfance at the rate of 2,1% (tax)</field>
                                 <field name="code">box_T6_taxe</field>
                                 <field name="expression_ids">
                                     <record id="tax_report_T6_taxe_tag" model="account.report.expression">
@@ -615,7 +615,7 @@
                                         <field name="formula">box_T6_base.balance * 0.021</field>
                                     </record>
                                     <record id="tax_report_T6_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">T6_taxe</field>
                                     </record>
@@ -713,7 +713,7 @@
                                         <field name="formula">box_P1_base.balance * 0.2</field>
                                     </record>
                                     <record id="tax_report_P1_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">P1_taxe</field>
                                     </record>
@@ -740,7 +740,7 @@
                                         <field name="formula">box_P2_base.balance * 0.13</field>
                                     </record>
                                     <record id="tax_report_P2_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">P2_taxe</field>
                                     </record>
@@ -772,7 +772,7 @@
                                         <field name="formula">box_I1_base.balance * 0.2</field>
                                     </record>
                                     <record id="tax_report_I1_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">I1_taxe</field>
                                     </record>
@@ -799,7 +799,7 @@
                                         <field name="formula">box_I2_base.balance * 0.1</field>
                                     </record>
                                     <record id="tax_report_I2_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">I2_taxe</field>
                                     </record>
@@ -826,7 +826,7 @@
                                         <field name="formula">box_I3_base.balance * 0.085</field>
                                     </record>
                                     <record id="tax_report_I3_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">I3_taxe</field>
                                     </record>
@@ -853,7 +853,7 @@
                                         <field name="formula">box_I4_base.balance * 0.055</field>
                                     </record>
                                     <record id="tax_report_I4_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">I4_taxe</field>
                                     </record>
@@ -880,7 +880,7 @@
                                         <field name="formula">box_I5_base.balance * 0.021</field>
                                     </record>
                                     <record id="tax_report_I5_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">I5_taxe</field>
                                     </record>
@@ -907,7 +907,7 @@
                                         <field name="formula">box_I6_base.balance * 0.0105</field>
                                     </record>
                                     <record id="tax_report_I6_taxe_tag_no_rounding" model="account.report.expression">
-                                        <field name="label">balance_from_tags</field>
+                                        <field name="label">balance_pfom_tags</field>
                                         <field name="engine">tax_tags</field>
                                         <field name="formula">I6_taxe</field>
                                     </record>
@@ -1025,7 +1025,7 @@
                                 </field>
                             </record>
                             <record id="tax_report_22" model="account.report.line">
-                                <field name="name">22 - Carry-over of credit from line 27 of the previous return</field>
+                                <field name="name">22 - Carry-over of credit pfom line 27 of the previous return</field>
                                 <field name="code">box_22</field>
                                 <field name="expression_ids">
                                     <record id="tax_report_22_applied_carryover" model="account.report.expression">
@@ -1058,7 +1058,7 @@
                                 </field>
                             </record>
                             <record id="tax_report_22A" model="account.report.line">
-                                <field name="name">22A - Enter the single tax rate applicable for the period if different from 100%</field>
+                                <field name="name">22A - Enter the single tax rate applicable for the period if different pfom 100%</field>
                                 <field name="code">box_22A</field>
                                 <field name="expression_ids">
                                     <record id="tax_report_22A_tag" model="account.report.expression">
@@ -1336,16 +1336,16 @@
                         </field>
                     </record>
                     <record id="tax_report_Y5" model="account.report.line">
-                        <field name="name">Y5 - Refund of TIC balance requested (carried forward from line Y4)</field>
+                        <field name="name">Y5 - Refund of TIC balance requested (carried forward pfom line Y4)</field>
                         <field name="code">box_Y5</field>
                         <field name="aggregation_formula">box_Y4.balance</field>
                     </record>
                     <record id="tax_report_Y6" model="account.report.line">
-                        <field name="name">Y6 - TIC credit transferred to the head company on the 3310-CA3G recapitulative return (carried forward from line Y4)</field>
+                        <field name="name">Y6 - TIC credit transferred to the head company on the 3310-CA3G recapitulative return (carried forward pfom line Y4)</field>
                         <field name="code">box_Y6</field>
                     </record>
                     <record id="tax_report_X5" model="account.report.line">
-                        <field name="name">X5 - TIC credit offset against VAT (carried forward from line X4)</field>
+                        <field name="name">X5 - TIC credit offset against VAT (carried forward pfom line X4)</field>
                         <field name="code">box_X5</field>
                         <field name="aggregation_formula">box_X4.balance</field>
                     </record>
@@ -1373,7 +1373,7 @@
                         </field>
                     </record>
                     <record id="tax_report_Z5" model="account.report.line">
-                        <field name="name">Z5 - Total domestic consumption tax due (carried forward from line Z4)</field>
+                        <field name="name">Z5 - Total domestic consumption tax due (carried forward pfom line Z4)</field>
                         <field name="code">box_Z5</field>
                         <field name="aggregation_formula">box_Z4.balance</field>
                     </record>
