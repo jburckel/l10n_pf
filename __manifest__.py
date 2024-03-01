@@ -26,9 +26,9 @@ This module applies to companies based in French Polynesia mainland.
         'data/tax_report_data.xml',
         'data/res_country_data.xml',
     ],
-    'demo': [
-        'demo/demo_company.xml',
-    ],
+    #'demo': [
+    #    'demo/demo_company.xml',
+    #],
     'post_init_hook': '_l10n_pf_post_init_hook',
     'license': 'LGPL-3',
 }
