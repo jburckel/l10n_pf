@@ -29,6 +29,6 @@ This module applies to companies based in French Polynesia mainland.
     'demo': [
         'demo/demo_company.xml',
     ],
-    'post_init_hook': '_l10n_fr_post_init_hook',
+    'post_init_hook': '_l10n_pf_post_init_hook',
     'license': 'LGPL-3',
 }

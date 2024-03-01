@@ -1,0 +1,2 @@
+id,sequence,name,auto_apply,vat_required,country_id,country_group_id,tax_ids/tax_src_id,tax_ids/tax_dest_id,name@fr
+fiscal_position_template_detaxe,1,Tax free,1,1,,l10n_pf.pf,,,Détaxe
