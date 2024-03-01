@@ -35,7 +35,7 @@
 
     <function model="account.chart.template" name="try_loading">
         <value eval="[]"/>
-        <value>fr</value>
+        <value>pf</value>
         <value model="res.company" eval="obj().env.ref('l10n_pf.demo_company_pf')"/>
     </function>
 </odoo>
