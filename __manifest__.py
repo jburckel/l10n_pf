@@ -8,7 +8,7 @@
     'category': 'Accounting/Localizations/Account Charts',
     'description': """
 This is the module to manage the accounting chart for French Polynesia in Odoo.
-========================================================================
+=================================================================================
 
 This module applies to companies based in French Polynesia mainland. It is largely based on the module for France, with differences in the chart of accounts and taxes.
 
