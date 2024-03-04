@@ -31,8 +31,8 @@ class AccountChartTemplate(models.AbstractModel):
                 'account_journal_early_pay_discount_gain_account_id': 'pcg_765',
                 'l10n_pf_rounding_difference_loss_account_id': 'pcg_658',
                 'l10n_pf_rounding_difference_profit_account_id': 'pcg_758',
-                'account_sale_tax_id': 'tva_normale',
-                'account_purchase_tax_id': 'tva_acq_normale',
+                #'account_sale_tax_id': 'tva_normale',
+                #'account_purchase_tax_id': 'tva_acq_normale',
             },
         }
 
