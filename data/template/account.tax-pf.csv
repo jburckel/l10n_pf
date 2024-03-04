@@ -1,17 +1,17 @@
-"id";"name";"description";"invoice_label";"amount";"amount_type";"sequence";"type_tax_use";"tax_scope";"include_base_amount";"tax_group_id";"price_include";"active";"tax_exigibility";"cash_basis_transition_account_id";"repartition_line_ids/factor_percent";"repartition_line_ids/repartition_type";"repartition_line_ids/document_type";"repartition_line_ids/account_id";"repartition_line_ids/tag_ids";"description@fr"
-"tva_acq_normale";"16% G";"16% Goods";"TVA 16%";"16.0";"percent";"9";"purchase";"consu";"1";"tax_group_tva_16";"";"";"";"";"100";"base";"invoice";"";"";"16% M"
-"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"100";"tax";"invoice";"pcg_44566";"20";
-"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"100";"base";"refund";"";"";
-"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"100";"tax";"refund";"pcg_44566";"-20";
-"tva_acq_normale TTC";"16% G INC";"16% Goods INC";"TVA 16%";"16.0";"percent";"9";"purchase";"consu";"1";"tax_group_tva_16";"True";"";"";"";"100";"base";"invoice";"";"";"16% M TTC"
-"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"100";"tax";"invoice";"pcg_44566";"20";
-"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"100";"base";"refund";"";"";
-"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"100";"tax";"refund";"pcg_44566";"-20";
-"tva_normale";"16% G";"16% Goods";"TVA 16%";"16.0";"percent";"10";"sale";"consu";"1";"tax_group_tva_16";"";"";"";"";"100";"base";"invoice";"";"+A1||+08_base";"16% M"
-"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"100";"tax";"invoice";"pcg_44571";"+08_taxe";
-"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"100";"base";"refund";"";"-A1||-08_base";
-"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"100";"tax";"refund";"pcg_44571";"-08_taxe";
-"tva_normale_ttc";"16% G INC";"16% Goods INC";"TVA 16%";"16.0";"percent";"10";"sale";"consu";"1";"tax_group_tva_16";"True";"";"";"";"100";"base";"invoice";"";"+A1||+08_base";"16% M"
-"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"100";"tax";"invoice";"pcg_44571";"+08_taxe";
-"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"100";"base";"refund";"";"-A1||-08_base";
-"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"100";"tax";"refund";"pcg_44571";"-08_taxe";
+"id","name","description","invoice_label","amount","amount_type","sequence","type_tax_use","tax_scope","include_base_amount","tax_group_id","price_include","active","tax_exigibility","cash_basis_transition_account_id","repartition_line_ids/factor_percent","repartition_line_ids/repartition_type","repartition_line_ids/document_type","repartition_line_ids/account_id","repartition_line_ids/tag_ids","description@fr"
+"tva_acq_normale","16% G","16% Goods","TVA 16%","16.0","percent","9","purchase","consu","1","tax_group_tva_16","","","","","100","base","invoice","","","16% M"
+"","","","","","","","","","","","","","","","100","tax","invoice","pcg_44566","20",
+"","","","","","","","","","","","","","","","100","base","refund","","",
+"","","","","","","","","","","","","","","","100","tax","refund","pcg_44566","-20",
+"tva_acq_normale TTC","16% G INC","16% Goods INC","TVA 16%","16.0","percent","9","purchase","consu","1","tax_group_tva_16","True","","","","100","base","invoice","","","16% M TTC"
+"","","","","","","","","","","","","","","","100","tax","invoice","pcg_44566","20",
+"","","","","","","","","","","","","","","","100","base","refund","","",
+"","","","","","","","","","","","","","","","100","tax","refund","pcg_44566","-20",
+"tva_normale","16% G","16% Goods","TVA 16%","16.0","percent","10","sale","consu","1","tax_group_tva_16","","","","","100","base","invoice","","+A1||+08_base","16% M"
+"","","","","","","","","","","","","","","","100","tax","invoice","pcg_44571","+08_taxe",
+"","","","","","","","","","","","","","","","100","base","refund","","-A1||-08_base",
+"","","","","","","","","","","","","","","","100","tax","refund","pcg_44571","-08_taxe",
+"tva_normale_ttc","16% G INC","16% Goods INC","TVA 16%","16.0","percent","10","sale","consu","1","tax_group_tva_16","True","","","","100","base","invoice","","+A1||+08_base","16% M"
+"","","","","","","","","","","","","","","","100","tax","invoice","pcg_44571","+08_taxe",
+"","","","","","","","","","","","","","","","100","base","refund","","-A1||-08_base",
+"","","","","","","","","","","","","","","","100","tax","refund","pcg_44571","-08_taxe",
