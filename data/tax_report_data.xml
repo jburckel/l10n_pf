@@ -13,7 +13,7 @@
             </record>
         </field>
         <field name="line_ids">
-            <record id="tax_report_montant_op_realisees" model="account.report.line">
+            <record id="tax_report_A_montant_op_realisees" model="account.report.line">
                 <field name="name">A - OPERATIONS REALISEES</field>
                 <field name="hierarchy_level">0</field>
                 <field name="children_ids">
