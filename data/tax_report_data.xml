@@ -337,8 +337,8 @@
                                 <field name="expression_ids">
                                     <record id="tax_report_16_tag" model="account.report.expression">
                                         <field name="label">balance</field>
-                                        <field name="engine">aggregation</field>
-                                        <field name="formula">0</field>
+                                        <field name="engine">tax_tags</field>
+                                        <field name="formula">D16</field>
                                     </record>
                                 </field>
                             </record>
