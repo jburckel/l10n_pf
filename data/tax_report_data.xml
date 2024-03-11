@@ -17,7 +17,7 @@
                 <field name="name">A - OPERATIONS REALISEES</field>
                 <field name="hierarchy_level">0</field>
                 <field name="children_ids">
-                    <record id="tax_report_op_imposables_ht" model="account.report.line">
+                    <record id="tax_report_A01_op_imposables_ht" model="account.report.line">
                         <field name="name">Montant des opérations imposables Hors TVA</field>
                         <field name="children_ids">
                             <record id="tax_report_01" model="account.report.line">
@@ -44,7 +44,7 @@
                             </record>
                         </field>
                     </record>
-                    <record id="tax_report_op_non_imposables" model="account.report.line">
+                    <record id="tax_report_A03_op_non_imposables" model="account.report.line">
                         <field name="name">Montant des opérations non imposables</field>
                         <field name="children_ids">
                             <record id="tax_report_03" model="account.report.line">
@@ -80,7 +80,7 @@
                     <record id="tax_report_B_tva_brute" model="account.report.line">
                         <field name="name">Opérations imposables (lignes 1 à 2)</field>
                     </record>
-                    <record id="tax_report_B_tva_reduite" model="account.report.line">
+                    <record id="tax_report_B05_tva_reduite" model="account.report.line">
                         <field name="name">Taux réduit 5%</field>
                         <field name="children_ids">
                             <record id="tax_report_05_base" model="account.report.line">
@@ -112,7 +112,7 @@
                             </record>
                         </field>
                     </record>
-                    <record id="tax_report_B_tva_intermediaire" model="account.report.line">
+                    <record id="tax_report_B06_tva_intermediaire" model="account.report.line">
                         <field name="name">Taux intermédiaire 13%</field>
                         <field name="children_ids">
                             <record id="tax_report_06_base" model="account.report.line">
@@ -144,7 +144,7 @@
                             </record>
                         </field>
                     </record>
-                    <record id="tax_report_B_tva_normal" model="account.report.line">
+                    <record id="tax_report_B07_tva_normal" model="account.report.line">
                         <field name="name">Taux normal 16%</field>
                         <field name="children_ids">
                             <record id="tax_report_07_base" model="account.report.line">
@@ -176,7 +176,7 @@
                             </record>
                         </field>
                     </record>
-                    <record id="tax_report_B_tva_regularisation" model="account.report.line">
+                    <record id="tax_report_B08_tva_regularisation" model="account.report.line">
                         <field name="name">Régularisation : autre TVA à reverser</field>
                         <field name="children_ids">
                             <record id="tax_report_08_base" model="account.report.line">
@@ -203,7 +203,7 @@
                             </record>
                         </field>
                     </record>
-                    <record id="tax_report_B_tva_exigible_total" model="account.report.line">
+                    <record id="tax_report_B09_tva_exigible_total" model="account.report.line">
                         <field name="name">Total (lignes 05 à 08)</field>
                         <field name="children_ids">
                             <record id="tax_report_09" model="account.report.line">
@@ -214,6 +214,171 @@
                                         <field name="label">balance</field>
                                         <field name="engine">aggregation</field>
                                         <field name="formula">boxe_05_taxe.balance + boxe_06_taxe.balance + boxe_07_taxe.balance + boxe_08_taxe.balance</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
+            <record id="tax_report_C10_tva_deductible" model="account.report.line">
+                <field name="name">C - TVA DEDUCTIBLE</field>
+                <field name="hierarchy_level">0</field>
+                <field name="children_ids">
+                    <record id="tax_report_C_tva_immo" model="account.report.line">
+                        <field name="name">TVA sur biens constituant des immobilisations</field>
+                        <field name="children_ids">
+                            <record id="tax_report_10" model="account.report.line">
+                                <field name="name">Montant</field>
+                                <field name="code">box_10</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_10_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">tax_tags</field>
+                                        <field name="formula">C10</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="tax_report_C11_tva_biens_services" model="account.report.line">
+                        <field name="name">TVA sur autres biens et services</field>
+                        <field name="children_ids">
+                            <record id="tax_report_11" model="account.report.line">
+                                <field name="name">Montant</field>
+                                <field name="code">box_11</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_11_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">tax_tags</field>
+                                        <field name="formula">C11</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="tax_report_C12_regularisation_tva" model="account.report.line">
+                        <field name="name">Régularisation : autre TVA à déduire</field>
+                        <field name="children_ids">
+                            <record id="tax_report_12" model="account.report.line">
+                                <field name="name">Montant</field>
+                                <field name="code">box_12</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_12_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">tax_tags</field>
+                                        <field name="formula">C12</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="tax_report_C13_report_credit" model="account.report.line">
+                        <field name="name">Report de crédit apparaissant sur la ligne 17 de la précédente déclaration</field>
+                        <field name="children_ids">
+                            <record id="tax_report_13" model="account.report.line">
+                                <field name="name">Montant</field>
+                                <field name="code">box_13</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_13_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">tax_tags</field>
+                                        <field name="formula">C13</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="tax_report_C14_tva_deductible_tva" model="account.report.line">
+                        <field name="name">Total (lignes 10 à 13) :</field>
+                        <field name="children_ids">
+                            <record id="tax_report_14" model="account.report.line">
+                                <field name="name">Montant</field>
+                                <field name="code">box_14</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_14_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">aggregation</field>
+                                        <field name="formula">box_10.balance + box_11.balance + box_12.balance + box_13.balance</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
+            <record id="tax_report_credit" model="account.report.line">
+                <field name="name">D - CREDIT</field>
+                <field name="hierarchy_level">0</field>
+                <field name="children_ids">
+                    <record id="tax_report_D15_credit_tva" model="account.report.line">
+                        <field name="name">CREDIT DE TVA (lignes 14 – 09)</field>
+                        <field name="children_ids">
+                            <record id="tax_report_15" model="account.report.line">
+                                <field name="name">Montant</field>
+                                <field name="code">box_15</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_15_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">aggregation</field>
+                                        <field name="formula">box_14.balance - box_09.balance</field>
+                                        <field name="subformula">if_above(XPF(0))</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="tax_report_D16_remboursement" model="account.report.line">
+                        <field name="name">Remboursement demandé :</field>
+                        <field name="children_ids">
+                            <record id="tax_report_16" model="account.report.line">
+                                <field name="name">Montant</field>
+                                <field name="code">box_16</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_16_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">tags</field>
+                                        <field name="formula">D16</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="tax_report_D17_credit_reporter" model="account.report.line">
+                        <field name="name">Crédit à reporter sur la prochaine déclaration (lignes 15 – 16)</field>
+                        <field name="children_ids">
+                            <record id="tax_report_17" model="account.report.line">
+                                <field name="name">Montant</field>
+                                <field name="code">box_17</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_17_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">aggregation</field>
+                                        <field name="formula">box_15.balance - box_16.balance</field>
+                                        <field name="subformula">if_above(XPF(0))</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
+            <record id="tax_report_E_a_payer" model="account.report.line">
+                <field name="name">E- TVA à PAYER</field>
+                <field name="hierarchy_level">0</field>
+                <field name="children_ids">
+                    <record id="tax_report_E18_credit" model="account.report.line">
+                        <field name="name">TVA nette due (lignes 09 – 14)</field>
+                        <field name="children_ids">
+                            <record id="tax_report_18" model="account.report.line">
+                                <field name="name">Montant</field>
+                                <field name="code">box_18</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_18_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">aggregation</field>
+                                        <field name="formula">box_09.balance - box_14.balance</field>
+                                        <field name="subformula">if_above(XPF(0))</field>
                                     </record>
                                 </field>
                             </record>
