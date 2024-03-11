@@ -73,6 +73,47 @@
                     </record>
                 </field>
             </record>
+            <record id="tax_report_B_tva_exigible" model="account.report.line">
+                <field name="name">B - TVA EXIGIBLE</field>
+                <field name="hierarchy_level">0</field>
+                <field name="children_ids">
+                    <record id="tax_report_B_tva_brute" model="account.report.line">
+                        <field name="name">Opérations imposables (lignes 1 à 2)</field>
+                    </record>
+                    <record id="tax_report_B_tva_reduite" model="account.report.line">
+                        <field name="name">Taux réduit 5%</field>
+                        <field name="children_ids">
+                            <record id="tax_report_05_base" model="account.report.line">
+                                <field name="name">Base Hors TVA</field>
+                                <field name="code">box_05_base</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_05_base_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">tax_tags</field>
+                                        <field name="formula">B05_base</field>
+                                    </record>
+                                </field>
+                            </record>
+                            <record id="tax_report_05_taxe" model="account.report.line">
+                                <field name="name">TVA due</field>
+                                <field name="code">box_05_taxe</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_05_taxe_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">aggregation</field>
+                                        <field name="formula">box_05_base.balance * 0.05</field>
+                                    </record>
+                                    <record id="tax_report_05_taxe_tag_no_rounding" model="account.report.expression">
+                                        <field name="label">balance_from_tags</field>
+                                        <field name="engine">tax_tags</field>
+                                        <field name="formula">B05_taxe</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
         </field>
     </record>
 </odoo>
