@@ -112,6 +112,113 @@
                             </record>
                         </field>
                     </record>
+                    <record id="tax_report_B_tva_intermediaire" model="account.report.line">
+                        <field name="name">Taux intermédiaire 13%</field>
+                        <field name="children_ids">
+                            <record id="tax_report_06_base" model="account.report.line">
+                                <field name="name">Base Hors TVA</field>
+                                <field name="code">box_06_base</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_06_base_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">tax_tags</field>
+                                        <field name="formula">B06_base</field>
+                                    </record>
+                                </field>
+                            </record>
+                            <record id="tax_report_06_taxe" model="account.report.line">
+                                <field name="name">TVA due</field>
+                                <field name="code">box_06_taxe</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_06_taxe_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">aggregation</field>
+                                        <field name="formula">box_06_base.balance * 0.13</field>
+                                    </record>
+                                    <record id="tax_report_06_taxe_tag_no_rounding" model="account.report.expression">
+                                        <field name="label">balance_from_tags</field>
+                                        <field name="engine">tax_tags</field>
+                                        <field name="formula">B06_taxe</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="tax_report_B_tva_normal" model="account.report.line">
+                        <field name="name">Taux normal 16%</field>
+                        <field name="children_ids">
+                            <record id="tax_report_07_base" model="account.report.line">
+                                <field name="name">Base Hors TVA</field>
+                                <field name="code">box_07_base</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_07_base_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">tax_tags</field>
+                                        <field name="formula">B07_base</field>
+                                    </record>
+                                </field>
+                            </record>
+                            <record id="tax_report_07_taxe" model="account.report.line">
+                                <field name="name">TVA due</field>
+                                <field name="code">box_07_taxe</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_07_taxe_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">aggregation</field>
+                                        <field name="formula">box_07_base.balance * 0.16</field>
+                                    </record>
+                                    <record id="tax_report_07_taxe_tag_no_rounding" model="account.report.expression">
+                                        <field name="label">balance_from_tags</field>
+                                        <field name="engine">tax_tags</field>
+                                        <field name="formula">B07_taxe</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="tax_report_B_tva_regularisation" model="account.report.line">
+                        <field name="name">Régularisation : autre TVA à reverser</field>
+                        <field name="children_ids">
+                            <record id="tax_report_08_base" model="account.report.line">
+                                <field name="name">Base Hors TVA</field>
+                                <field name="code">box_08_base</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_08_base_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">tax_tags</field>
+                                        <field name="formula">B08_base</field>
+                                    </record>
+                                </field>
+                            </record>
+                            <record id="tax_report_08_taxe" model="account.report.line">
+                                <field name="name">TVA due</field>
+                                <field name="code">box_08_taxe</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_08_taxe_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">tax_tags</field>
+                                        <field name="formula">B08_taxe</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="tax_report_B_tva_exigible_total" model="account.report.line">
+                        <field name="name">Total (lignes 05 à 08)</field>
+                        <field name="children_ids">
+                            <record id="tax_report_09" model="account.report.line">
+                                <field name="name">TVA due</field>
+                                <field name="code">box_09</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_09_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">aggregation</field>
+                                        <field name="formula">boxe_05_taxe.balance + boxe_06_taxe.balance + boxe_07_taxe.balance + boxe_08_taxe.balance</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
                 </field>
             </record>
         </field>
