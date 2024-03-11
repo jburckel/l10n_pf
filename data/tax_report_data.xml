@@ -307,6 +307,52 @@
                     </record>
                 </field>
             </record>
+            <record id="tax_report_D_credit" model="account.report.line">
+                <field name="name">D - CREDIT</field>
+                <field name="hierarchy_level">0</field>
+                <field name="children_ids">
+                    <record id="tax_report_D15_credit_tva" model="account.report.line">
+                        <field name="name">CREDIT DE TVA (lignes 14 – 09)</field>
+                        <field name="children_ids">
+                            <record id="tax_report_15" model="account.report.line">
+                                <field name="name">Montant</field>
+                                <field name="code">box_15</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_15_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">aggregation</field>
+                                        <field name="formula">box_14.balance - box_09.balance</field>
+                                        <field name="subformula">if_above(XPF(0))</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
+            <record id="tax_report_E_a_payer" model="account.report.line">
+                <field name="name">E- TVA à PAYER</field>
+                <field name="hierarchy_level">0</field>
+                <field name="children_ids">
+                    <record id="tax_report_E18_credit" model="account.report.line">
+                        <field name="name">TVA nette due (lignes 09 – 14)</field>
+                        <field name="children_ids">
+                            <record id="tax_report_18" model="account.report.line">
+                                <field name="name">Montant</field>
+                                <field name="code">box_18</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_18_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">aggregation</field>
+                                        <field name="formula">box_09.balance - box_14.balance</field>
+                                        <field name="subformula">if_above(XPF(0))</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
         </field>
     </record>
 </odoo>
