@@ -328,6 +328,39 @@
                             </record>
                         </field>
                     </record>
+                    <record id="tax_report_D16_remboursement" model="account.report.line">
+                        <field name="name">Remboursement demandé :</field>
+                        <field name="children_ids">
+                            <record id="tax_report_16" model="account.report.line">
+                                <field name="name">Montant</field>
+                                <field name="code">box_16</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_16_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">tags</field>
+                                        <field name="formula">D16</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="tax_report_D17_credit_reporter" model="account.report.line">
+                        <field name="name">Crédit à reporter sur la prochaine déclaration (lignes 15 – 16)</field>
+                        <field name="children_ids">
+                            <record id="tax_report_17" model="account.report.line">
+                                <field name="name">Montant</field>
+                                <field name="code">box_17</field>
+                                <field name="expression_ids">
+                                    <record id="tax_report_17_tag" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">aggregation</field>
+                                        <field name="formula">box_15.balance - box_16.balance</field>
+                                        <field name="subformula">if_above(XPF(0))</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
                 </field>
             </record>
             <record id="tax_report_E_a_payer" model="account.report.line">
