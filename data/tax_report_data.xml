@@ -213,7 +213,7 @@
                                     <record id="tax_report_09_tag" model="account.report.expression">
                                         <field name="label">balance</field>
                                         <field name="engine">aggregation</field>
-                                        <field name="formula">boxe_05_taxe.balance + boxe_06_taxe.balance + boxe_07_taxe.balance + boxe_08_taxe.balance</field>
+                                        <field name="formula">box_05_taxe.balance + box_06_taxe.balance + box_07_taxe.balance + box_08_taxe.balance</field>
                                     </record>
                                 </field>
                             </record>
