@@ -13,9 +13,6 @@ class ResCompany(models.Model):
     cps = fields.Char(string='CPS', size=8)
     ape = fields.Char(string='APE', size=5)
 
-    l10n_pf_rounding_difference_loss_account_id = fields.Many2one('account.account', check_company=True)
-    l10n_pf_rounding_difference_profit_account_id = fields.Many2one('account.account', check_company=True)
-
     @api.model
     def _get_unalterable_country(self):
         return ['FR', 'MF', 'MQ', 'NC', 'PF', 'RE', 'GF', 'GP', 'TF'] # These codes correspond to France and DOM-TOM.
