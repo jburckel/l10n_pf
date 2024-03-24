@@ -27,9 +27,9 @@
             <field name="tax_src_id" ref="tva_normale" />
             <field name="tax_dest_id" ref="tva_export_0" />
         </record>
-        <record id="fp_tax_template_impexp_vt_normale_ttc" model="account.fiscal.position.tax.template">
+        <record id="fp_tax_template_impexp_vt_normale_TTC" model="account.fiscal.position.tax.template">
             <field name="position_id" ref="fiscal_position_template_detaxe" />
-            <field name="tax_src_id" ref="tva_normale_ttc" />
+            <field name="tax_src_id" ref="tva_normale_TTC" />
             <field name="tax_dest_id" ref="tva_export_0" />
         </record>
         <record id="fp_tax_template_impexp_vt_intermediaire" model="account.fiscal.position.tax.template">
@@ -37,9 +37,9 @@
             <field name="tax_src_id" ref="tva_intermediaire" />
             <field name="tax_dest_id" ref="tva_export_0" />
         </record>
-        <record id="fp_tax_template_impexp_vt_intermediaire_ttc" model="account.fiscal.position.tax.template">
+        <record id="fp_tax_template_impexp_vt_intermediaire_TTC" model="account.fiscal.position.tax.template">
             <field name="position_id" ref="fiscal_position_template_detaxe" />
-            <field name="tax_src_id" ref="tva_intermediaire_ttc" />
+            <field name="tax_src_id" ref="tva_intermediaire_TTC" />
             <field name="tax_dest_id" ref="tva_export_0" />
         </record>
         <record id="fp_tax_template_impexp_vt_reduite" model="account.fiscal.position.tax.template">
@@ -47,9 +47,9 @@
             <field name="tax_src_id" ref="tva_reduite" />
             <field name="tax_dest_id" ref="tva_export_0" />
         </record>
-        <record id="fp_tax_template_impexp_vt_reduite_ttc" model="account.fiscal.position.tax.template">
+        <record id="fp_tax_template_impexp_vt_reduite_TTC" model="account.fiscal.position.tax.template">
             <field name="position_id" ref="fiscal_position_template_detaxe" />
-            <field name="tax_src_id" ref="tva_reduite_ttc" />
+            <field name="tax_src_id" ref="tva_reduite_TTC" />
             <field name="tax_dest_id" ref="tva_export_0" />
         </record>
 </odoo>
