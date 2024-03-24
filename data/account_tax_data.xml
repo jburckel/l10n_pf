@@ -116,7 +116,7 @@
     </record>
 
     <!-- VENTES Tax INCLUDE (TTC) -->
-    <record model="account.tax.template" id="tva_normale_ttc">
+    <record model="account.tax.template" id="tva_normale_TTC">
         <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
         <field name="name">TVA collectée (vente) 16,0% TTC</field>
         <field name="description">16%</field>
@@ -154,7 +154,7 @@
         ]"/>
     </record>
 
-    <record model="account.tax.template" id="tva_intermediaire_ttc">
+    <record model="account.tax.template" id="tva_intermediaire_TTC">
         <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
         <field name="name">TVA collectée (vente) 13% TTC</field>
         <field name="description">13%</field>
@@ -195,7 +195,7 @@
         ]"/>
     </record>
 
-    <record model="account.tax.template" id="tva_reduite_ttc">
+    <record model="account.tax.template" id="tva_reduite_TTC">
         <field name="chart_template_id" ref="l10n_pf_pcg_chart_template"/>
         <field name="name">TVA collectée (vente) 5,0% TTC</field>
         <field name="description">5%</field>
@@ -609,7 +609,7 @@
     </record>
 
     <record id="pcg_60267" model="account.account.template">
-        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale')])]"/>
+        <field name="tax_ids" eval="[(6,0,[ref('tva_acq_normale_TTC')])]"/>
     </record>
 
     <record id="pcg_604" model="account.account.template">
