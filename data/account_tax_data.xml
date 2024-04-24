@@ -170,7 +170,7 @@
         <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
             (0,0, {
                 'factor_percent': 100,
-                'plus_report_expression_ids': [ref('l10n_pf.tax_report_01_tag'), ref('l10n_pf.tax_report_06_base_tag')],
+                'plus_report_expression_ids': [ref('l10n_pf.tax_report_02_tag'), ref('l10n_pf.tax_report_06_base_tag')],
                 'repartition_type': 'base'
             }),
             (0,0, {
@@ -183,7 +183,7 @@
         <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
             (0,0, {
                 'factor_percent': 100,
-                'minus_report_expression_ids': [ref('l10n_pf.tax_report_01_tag'), ref('l10n_pf.tax_report_06_base_tag')],
+                'minus_report_expression_ids': [ref('l10n_pf.tax_report_02_tag'), ref('l10n_pf.tax_report_06_base_tag')],
                 'repartition_type': 'base'
             }),
             (0,0, {
