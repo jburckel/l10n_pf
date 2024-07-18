@@ -4,7 +4,7 @@
     'website': 'https://github.com/jburckel/l10n_pf',
     'icon': '/account/static/description/l10n.png',
     'countries': ['pf'],
-    'version': '0.1',
+    'version': '0.2',
     'category': 'Accounting/Localizations/Account Charts',
     'description': """
 This is the module to manage the accounting chart for French Polynesia in Odoo.
