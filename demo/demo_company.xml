@@ -36,5 +36,6 @@
         <value eval="[]"/>
         <value>pf</value>
         <value model="res.company" eval="obj().env.ref('l10n_pf.demo_company_pf')"/>
+        <value eval="True"/>
     </function>
 </odoo>
