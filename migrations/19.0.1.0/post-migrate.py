@@ -1,8 +1,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import api, SUPERUSER_ID
-
-
+# try_loading is intentionally omitted here: calling it before the registry is
+# fully loaded (post-migrate stage) triggers a NOT NULL violation on
+# account_account.create_asset in v19. The chart template is refreshed
+# automatically by the standard module-upgrade mechanism instead.
 def migrate(cr, version):
-    env = api.Environment(cr, SUPERUSER_ID, {})
-    for company in env['res.company'].search([('chart_template', '=', 'pf')]):
-        env['account.chart.template'].try_loading('pf', company)
+    pass
