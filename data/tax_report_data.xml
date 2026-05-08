@@ -26,7 +26,7 @@
                                     <record id="tax_report_01_tag" model="account.report.expression">
                                         <field name="label">balance</field>
                                         <field name="engine">tax_tags</field>
-                                        <field name="formula">A01</field>
+                                        <field name="formula">-A01</field>
                                     </record>
                                 </field>
                             </record>
@@ -37,7 +37,7 @@
                                     <record id="tax_report_02_tag" model="account.report.expression">
                                         <field name="label">balance</field>
                                         <field name="engine">tax_tags</field>
-                                        <field name="formula">A02</field>
+                                        <field name="formula">-A02</field>
                                     </record>
                                 </field>
                             </record>
@@ -53,7 +53,7 @@
                                     <record id="tax_report_03_tag" model="account.report.expression">
                                         <field name="label">balance</field>
                                         <field name="engine">tax_tags</field>
-                                        <field name="formula">A03</field>
+                                        <field name="formula">-A03</field>
                                     </record>
                                 </field>
                             </record>
@@ -64,7 +64,7 @@
                                     <record id="tax_report_04_tag" model="account.report.expression">
                                         <field name="label">balance</field>
                                         <field name="engine">tax_tags</field>
-                                        <field name="formula">A04</field>
+                                        <field name="formula">-A04</field>
                                     </record>
                                 </field>
                             </record>
@@ -89,7 +89,7 @@
                                     <record id="tax_report_05_base_tag" model="account.report.expression">
                                         <field name="label">balance</field>
                                         <field name="engine">tax_tags</field>
-                                        <field name="formula">B05_base</field>
+                                        <field name="formula">-B05_base</field>
                                     </record>
                                 </field>
                             </record>
@@ -105,7 +105,7 @@
                                     <record id="tax_report_05_taxe_tag_no_rounding" model="account.report.expression">
                                         <field name="label">balance_from_tags</field>
                                         <field name="engine">tax_tags</field>
-                                        <field name="formula">B05_taxe</field>
+                                        <field name="formula">-B05_taxe</field>
                                     </record>
                                 </field>
                             </record>
@@ -121,7 +121,7 @@
                                     <record id="tax_report_06_base_tag" model="account.report.expression">
                                         <field name="label">balance</field>
                                         <field name="engine">tax_tags</field>
-                                        <field name="formula">B06_base</field>
+                                        <field name="formula">-B06_base</field>
                                     </record>
                                 </field>
                             </record>
@@ -137,7 +137,7 @@
                                     <record id="tax_report_06_taxe_tag_no_rounding" model="account.report.expression">
                                         <field name="label">balance_from_tags</field>
                                         <field name="engine">tax_tags</field>
-                                        <field name="formula">B06_taxe</field>
+                                        <field name="formula">-B06_taxe</field>
                                     </record>
                                 </field>
                             </record>
@@ -153,7 +153,7 @@
                                     <record id="tax_report_07_base_tag" model="account.report.expression">
                                         <field name="label">balance</field>
                                         <field name="engine">tax_tags</field>
-                                        <field name="formula">B07_base</field>
+                                        <field name="formula">-B07_base</field>
                                     </record>
                                 </field>
                             </record>
@@ -169,7 +169,7 @@
                                     <record id="tax_report_07_taxe_tag_no_rounding" model="account.report.expression">
                                         <field name="label">balance_from_tags</field>
                                         <field name="engine">tax_tags</field>
-                                        <field name="formula">B07_taxe</field>
+                                        <field name="formula">-B07_taxe</field>
                                     </record>
                                 </field>
                             </record>
@@ -185,7 +185,7 @@
                                     <record id="tax_report_08_base_tag" model="account.report.expression">
                                         <field name="label">balance</field>
                                         <field name="engine">tax_tags</field>
-                                        <field name="formula">B08_base</field>
+                                        <field name="formula">-B08_base</field>
                                     </record>
                                 </field>
                             </record>
@@ -196,7 +196,7 @@
                                     <record id="tax_report_08_taxe_tag" model="account.report.expression">
                                         <field name="label">balance</field>
                                         <field name="engine">tax_tags</field>
-                                        <field name="formula">B08_taxe</field>
+                                        <field name="formula">-B08_taxe</field>
                                     </record>
                                 </field>
                             </record>
