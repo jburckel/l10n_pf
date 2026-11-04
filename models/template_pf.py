@@ -9,7 +9,7 @@ class AccountChartTemplate(models.AbstractModel):
     @template('pf')
     def _get_pf_template_data(self):
         return {
-            'code_digits': 6,
+            'code_digits': 8,
             'property_account_receivable_id': 'pf_pcg_recv',
             'property_account_payable_id': 'pf_pcg_pay',
         }
@@ -45,11 +45,11 @@ class AccountChartTemplate(models.AbstractModel):
 
     def _get_bank_fees_reco_account(self, company):
         # Polynesian account for the standard "Bank fees" reconciliation
-        # model. Be as precise as possible: if the account was modified, fall
+        # model (627800, padded to 8 digits on new companies). Be as precise as possible: if the account was modified, fall
         # back on the standard choice instead of picking a wrong one.
         pf_account = self.env['account.account'].with_company(company).search([
             *self.env['account.account']._check_company_domain(company.id),
-            ('code', '=', '627800'),
+            ('code', 'in', ('627800', '62780000')),
             ('account_type', '=', 'expense'),
             ('name', '=', 'Other expenses and commissions on services supplied'),
         ], limit=1)

@@ -16,7 +16,12 @@ into another one.
 - `migrations/19.0.1.1.0/end-migrate_update_taxes.py`: reloads the chart on
   every company using it (`try_loading(..., force_create=False)`), so that the
   unsigned tax tags and the fiscal position links of 19.0 reach the existing
-  taxes.
+  taxes. It also fixes the invoice label of "ACH-5% TTC".
+- The "5%" sale tax (`tva_reduite`) is tax excluded since 19.0.1.1.0 on new
+  companies. Existing companies keep their setting: switching it would make
+  the prices of the products sold with this tax be read as tax excluded.
+  Check its use and change it by hand if needed.
+- Account codes have 8 digits (`code_digits`), as on the 17.0 databases.
 
 After the upgrade, compare a VAT return before and after on a copy of the
 production database.

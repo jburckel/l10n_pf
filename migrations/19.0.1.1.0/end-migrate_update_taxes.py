@@ -9,6 +9,12 @@ script can be replayed. It runs at the ``end`` stage, once every module of
 the database is loaded (at the ``post`` stage, the fields added to
 ``account.account`` by modules not yet upgraded, such as ``create_asset``,
 are missing from the registry and the reload fails).
+
+An existing tax keeps its own settings (the reload only rewrites its tags and
+fiscal positions): the invoice label of "ACH-5% TTC" is fixed here. The
+switch of "5%" (tva_reduite) from tax included to tax excluded is NOT applied
+to existing companies: the products sold with this tax would see their price
+interpreted as tax excluded. Check its use and change it by hand if needed.
 """
 from odoo import SUPERUSER_ID, api
 
@@ -19,3 +25,7 @@ def migrate(cr, version):
         [('chart_template', '=', 'pf')], order='parent_path')
     for company in companies:
         env['account.chart.template'].try_loading('pf', company, force_create=False)
+        tax = env['account.chart.template'].with_company(company).ref(
+            'tva_acq_reduite_ttc', raise_if_not_found=False)
+        if tax and tax.invoice_label == 'TVA 5%':
+            tax.invoice_label = 'TVA 5% TTC'
