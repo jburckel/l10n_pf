@@ -9,7 +9,9 @@ class ResCompany(models.Model):
 
     l10n_pf_closing_sequence_id = fields.Many2one('ir.sequence', 'Sequence to use to build sale closings', readonly=True)
 
-    tahiti = fields.Char(string='TAHITI', size=6)
+    tahiti = fields.Char(
+        related='partner_id.tahiti', string='TAHITI',
+        help="TAHITI number of the company, read from its tax identifier.")
     cps = fields.Char(string='CPS', size=8)
     ape = fields.Char(string='APE', size=5)
 
