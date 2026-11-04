@@ -1,0 +1,277 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_pf
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-04 00:57+0000\n"
+"PO-Revision-Date: 2026-11-04 00:57+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_01
+msgid "01 - Ventes"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_02
+msgid "02 - Prestations de services"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_03
+msgid "03 - Exportations"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_04
+msgid "04 - Autres opérations non taxables"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_A_montant_op_realisees
+msgid "A - OPERATIONS REALISEES"
+msgstr ""
+
+#. module: l10n_pf
+#: model:ir.model.fields,field_description:l10n_pf.field_res_company__ape
+msgid "APE"
+msgstr ""
+
+#. module: l10n_pf
+#: model:ir.model,name:l10n_pf.model_account_chart_template
+msgid "Account Chart Template"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_B_tva_exigible
+msgid "B - TVA EXIGIBLE"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.column,name:l10n_pf.tax_report_base
+msgid "Balance"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_05_base
+#: model:account.report.line,name:l10n_pf.tax_report_06_base
+#: model:account.report.line,name:l10n_pf.tax_report_07_base
+#: model:account.report.line,name:l10n_pf.tax_report_08_base
+msgid "Base Hors TVA"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_C_tva_deductible
+msgid "C - TVA DEDUCTIBLE"
+msgstr ""
+
+#. module: l10n_pf
+#: model:ir.model.fields,field_description:l10n_pf.field_res_company__cps
+msgid "CPS"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_D15_credit_tva
+msgid "CREDIT DE TVA (lignes 14 – 09)"
+msgstr ""
+
+#. module: l10n_pf
+#: model:ir.model,name:l10n_pf.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: l10n_pf
+#: model:ir.model,name:l10n_pf.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_D17_credit_reporter
+msgid "Crédit à reporter sur la prochaine déclaration (lignes 15 – 16)"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_credit
+msgid "D - CREDIT"
+msgstr ""
+
+#. module: l10n_pf
+#: model:res.country.group,name:l10n_pf.dom-tom
+msgid "DOM-TOM"
+msgstr ""
+
+#. module: l10n_pf
+#: model:ir.model.fields,field_description:l10n_pf.field_account_chart_template__display_name
+#: model:ir.model.fields,field_description:l10n_pf.field_res_company__display_name
+#: model:ir.model.fields,field_description:l10n_pf.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_E_a_payer
+msgid "E- TVA à PAYER"
+msgstr ""
+
+#. module: l10n_pf
+#: model:ir.model.fields,field_description:l10n_pf.field_account_chart_template__id
+#: model:ir.model.fields,field_description:l10n_pf.field_res_company__id
+#: model:ir.model.fields,field_description:l10n_pf.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_pf
+#: model:ir.model.fields,field_description:l10n_pf.field_res_company__l10n_pf_rounding_difference_loss_account_id
+msgid "L10N Pf Rounding Difference Loss Account"
+msgstr ""
+
+#. module: l10n_pf
+#: model:ir.model.fields,field_description:l10n_pf.field_res_company__l10n_pf_rounding_difference_profit_account_id
+msgid "L10N Pf Rounding Difference Profit Account"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_10
+#: model:account.report.line,name:l10n_pf.tax_report_11
+#: model:account.report.line,name:l10n_pf.tax_report_12
+#: model:account.report.line,name:l10n_pf.tax_report_13
+#: model:account.report.line,name:l10n_pf.tax_report_14
+#: model:account.report.line,name:l10n_pf.tax_report_15
+#: model:account.report.line,name:l10n_pf.tax_report_16
+#: model:account.report.line,name:l10n_pf.tax_report_17
+#: model:account.report.line,name:l10n_pf.tax_report_18
+msgid "Montant"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_A01_op_imposables_ht
+msgid "Montant des opérations imposables Hors TVA"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_A03_op_non_imposables
+msgid "Montant des opérations non imposables"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_B_tva_brute
+msgid "Opérations imposables (lignes 1 à 2)"
+msgstr ""
+
+#. module: l10n_pf
+#: model:ir.ui.menu,name:l10n_pf.account_reports_pd_statements_menu
+msgid "Polynésie française"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_D16_remboursement
+msgid "Remboursement demandé :"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_C13_report_credit
+msgid ""
+"Report de crédit apparaissant sur la ligne 17 de la précédente déclaration"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_C12_regularisation_tva
+msgid "Régularisation : autre TVA à déduire"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_B08_tva_regularisation
+msgid "Régularisation : autre TVA à reverser"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.account.tag,name:l10n_pf.account_pd_tag_salaires
+msgid "Salaries"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.account.tag,name:l10n_pf.account_pd_tag_charges_sociales
+msgid "Social charges"
+msgstr ""
+
+#. module: l10n_pf
+#: model:ir.model.fields,field_description:l10n_pf.field_res_company__tahiti
+#: model:ir.model.fields,field_description:l10n_pf.field_res_partner__tahiti
+#: model:ir.model.fields,field_description:l10n_pf.field_res_users__tahiti
+msgid "TAHITI"
+msgstr ""
+
+#. module: l10n_pf
+#: model:ir.model.fields,help:l10n_pf.field_res_partner__tahiti
+#: model:ir.model.fields,help:l10n_pf.field_res_users__tahiti
+msgid ""
+"TAHITI number of a Polynesian partner, read from its tax identifier. Empty "
+"for partners of another country, whose tax identifier is a foreign VAT "
+"number."
+msgstr ""
+
+#. module: l10n_pf
+#: model:ir.model.fields,help:l10n_pf.field_res_company__tahiti
+msgid "TAHITI number of the company, read from its tax identifier."
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_05_taxe
+#: model:account.report.line,name:l10n_pf.tax_report_06_taxe
+#: model:account.report.line,name:l10n_pf.tax_report_07_taxe
+#: model:account.report.line,name:l10n_pf.tax_report_08_taxe
+#: model:account.report.line,name:l10n_pf.tax_report_09
+msgid "TVA due"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_E18_credit
+msgid "TVA nette due (lignes 09 – 14)"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_C11_tva_biens_services
+msgid "TVA sur autres biens et services"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_C10_tva_immo
+msgid "TVA sur biens constituant des immobilisations"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_B06_tva_intermediaire
+msgid "Taux intermédiaire 13%"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_B07_tva_normal
+msgid "Taux normal 16%"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_B05_tva_reduite
+msgid "Taux réduit 5%"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report,name:l10n_pf.tax_report
+msgid "Tax Report"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_B09_tva_exigible_total
+msgid "Total (lignes 05 à 08)"
+msgstr ""
+
+#. module: l10n_pf
+#: model:account.report.line,name:l10n_pf.tax_report_C14_tva_deductible_tva
+msgid "Total (lignes 10 à 13) :"
+msgstr ""

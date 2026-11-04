@@ -1,5 +1,5 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import models, Command
+from odoo import models
 from odoo.addons.account.models.chart_template import template
 
 
@@ -9,11 +9,9 @@ class AccountChartTemplate(models.AbstractModel):
     @template('pf')
     def _get_pf_template_data(self):
         return {
-            'code_digits': 6,
+            'code_digits': 8,
             'property_account_receivable_id': 'pf_pcg_recv',
             'property_account_payable_id': 'pf_pcg_pay',
-            'property_account_expense_categ_id': 'pcg_6071',
-            'property_account_income_categ_id': 'pcg_7071',
         }
 
     @template('pf', 'res.company')
@@ -33,6 +31,8 @@ class AccountChartTemplate(models.AbstractModel):
                 'l10n_pf_rounding_difference_profit_account_id': 'pcg_758',
                 'account_sale_tax_id': 'tva_normale',
                 'account_purchase_tax_id': 'tva_acq_normale',
+                'income_account_id': 'pcg_7071',
+                'expense_account_id': 'pcg_6071',
             },
         }
 
@@ -43,17 +43,14 @@ class AccountChartTemplate(models.AbstractModel):
             'purchase': {'refund_sequence': True},
         }
 
-    @template('pf', 'account.reconcile.model')
-    def _get_pf_reconcile_model(self):
-        return {
-            'bank_charges_reconcile_model': {
-                'name': 'Bank fees',
-                'line_ids': [
-                    Command.create({
-                        'account_id': 'pcg_6278',
-                        'amount_type': 'percentage',
-                        'amount_string': '100',
-                    }),
-                ],
-            },
-        }
+    def _get_bank_fees_reco_account(self, company):
+        # Polynesian account for the standard "Bank fees" reconciliation
+        # model (627800, padded to 8 digits on new companies). Be as precise as possible: if the account was modified, fall
+        # back on the standard choice instead of picking a wrong one.
+        pf_account = self.env['account.account'].with_company(company).search([
+            *self.env['account.account']._check_company_domain(company.id),
+            ('code', 'in', ('627800', '62780000')),
+            ('account_type', '=', 'expense'),
+            ('name', '=', 'Other expenses and commissions on services supplied'),
+        ], limit=1)
+        return pf_account or super()._get_bank_fees_reco_account(company)

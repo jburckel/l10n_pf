@@ -1,16 +1,23 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
     'name': 'French Polynesia - Accounting',
+    'author': 'Natimai Solutions',
     'website': 'https://github.com/jburckel/l10n_pf',
     'icon': '/account/static/description/l10n.png',
     'countries': ['pf'],
-    'version': '19.0.1.0',
+    'version': '19.0.1.1.0',
     'category': 'Accounting/Localizations/Account Charts',
     'description': """
 This is the module to manage the accounting chart for French Polynesia in Odoo.
 =================================================================================
 
 This module applies to companies based in French Polynesia mainland. It is largely based on the module for France, with differences in the chart of accounts and taxes.
+
+* chart of accounts, taxes (16%, 13%, 5%, export) and the "Tax free" fiscal position;
+* VAT return (tax report) of French Polynesia;
+* the TAHITI number is entered in the standard tax identifier field (labelled
+  "TAHITI") and exposed as a ``tahiti`` field on partners and companies;
+* CPS and APE numbers on the company.
 
 **Credits:** Sistheo, Zeekom, CrysaLEAD, Akretion, Camptocamp and Natimai Solutions.
 """,
