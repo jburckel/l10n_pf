@@ -1,0 +1,45 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_pf
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 00:00+0000\n"
+"PO-Revision-Date: 2026-10-02 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: l10n_pf
+#: model_terms:ir.ui.view,arch_db:l10n_pf.res_company_form_l10n_pf
+#: model_terms:ir.ui.view,arch_db:l10n_pf.res_partner_form_l10n_pf
+msgid "TAHITI / VAT No."
+msgstr "N° TAHITI / TVA"
+
+#. module: l10n_pf
+#: model_terms:ir.ui.view,arch_db:l10n_pf.res_company_form_l10n_pf
+#: model_terms:ir.ui.view,arch_db:l10n_pf.res_partner_form_l10n_pf
+msgid "e.g. 123456"
+msgstr "ex. 123456"
+
+#. module: l10n_pf
+#: model:ir.model.fields,help:l10n_pf.field_res_partner__tahiti
+msgid ""
+"TAHITI number of a Polynesian partner, read from its tax identifier. Empty "
+"for partners of another country, whose tax identifier is a foreign VAT "
+"number."
+msgstr ""
+"Numéro TAHITI d'un partenaire polynésien, lu dans son identifiant fiscal. "
+"Vide pour les partenaires d'un autre pays, dont l'identifiant fiscal est un "
+"numéro de TVA étranger."
+
+#. module: l10n_pf
+#: model:ir.model.fields,help:l10n_pf.field_res_company__tahiti
+msgid "TAHITI number of the company, read from its tax identifier."
+msgstr "Numéro TAHITI de la société, lu dans son identifiant fiscal."
